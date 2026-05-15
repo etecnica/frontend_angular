@@ -1,59 +1,89 @@
-# FrontendAngular
+# Spike Investments - Frontend Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.11.
+Este proyecto corresponde a la implementación del frontend en Angular para el sistema Spike Investments, desarrollado como evidencia académica del programa Análisis y Desarrollo de Software del SENA.
 
-## Development server
+El proyecto toma como base el prototipo construido previamente con HTML, CSS y JavaScript, conservando su interfaz visual, pero migrando su estructura a Angular mediante el componente principal de la aplicación.
 
-To start a local development server, run:
+## Objetivo del proyecto
+
+Implementar Angular como framework frontend para integrar los módulos del sistema Spike Investments con la API REST desarrollada previamente en Node.js, Express y MySQL.
+
+## Relación con la sesión anterior
+
+En la sesión anterior el frontend estaba compuesto por:
+
+- `Index.html`: estructura visual de la aplicación.
+- `styles.css`: estilos de la interfaz.
+- `app.js`: lógica de navegación, login, registro, carrito, CRUD y consumo de API.
+- `server.js`: backend con Node.js, Express y MySQL.
+
+En esta versión con Angular, la estructura se reorganiza así:
+
+- `src/app/app.html`: reemplaza la estructura visual principal del `Index.html`.
+- `src/styles.css`: conserva los estilos globales del prototipo anterior.
+- `src/app/app.ts`: contiene la lógica que antes estaba en `app.js`, ahora usando TypeScript.
+- `backend_spike/server.js`: se conserva como backend y no es reemplazado por Angular.
+
+## Tecnologías utilizadas
+
+- Angular
+- TypeScript
+- HTML
+- CSS
+- Node.js
+- Express
+- MySQL
+- Git y GitHub
+- pnpm como gestor de paquetes
+
+## Funcionalidades implementadas
+
+- Interfaz principal de Spike Investments en Angular.
+- Registro de clientes conectado a MySQL.
+- Inicio de sesión mediante API REST.
+- Validación de usuario administrador.
+- Visualización de opciones administrativas según rol.
+- CRUD de productos.
+- CRUD de clientes.
+- Consumo de rutas `/login`, `/clientes` y `/productos`.
+- Separación entre frontend Angular y backend Node.js.
+
+## Puertos utilizados
+
+El frontend Angular se ejecuta en:
 
 ```bash
+http://localhost:4200
+
+El backend con Node.js y Express se ejecuta en:
+
+http://localhost:3000
+Ejecución del frontend Angular
+
+Para ingresar al frontend:
+
+cd frontend_angular
+pnpm install
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Luego abrir en el navegador:
 
-## Code scaffolding
+http://localhost:4200
+Ejecución del backend
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Para iniciar el servidor backend:
 
-```bash
-ng generate component component-name
-```
+cd backend_spike
+node server.js
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+El backend se conecta a la base de datos MySQL db_spike.
 
-```bash
-ng generate --help
-```
+Evidencia de integración
 
-## Building
+La integración se valida cuando desde Angular se registra un cliente, se inicia sesión con usuario administrador y se realizan operaciones CRUD, verificando que los datos se almacenan y actualizan correctamente en MySQL.
 
-To build the project run:
+Autor
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Aprendiz: Eduardo Colmenares
+Programa: Análisis y Desarrollo de Software
+Institución: SENA
